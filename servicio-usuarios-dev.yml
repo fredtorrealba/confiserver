@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: servicio-usuarios
+  datasource:
+    url: jdbc:postgresql://PSpostgres/db_springboot_cloud
+    username: postgres
+    password: Docker76--
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  sql:
+    init:
+      mode: ALWAYS
+  sleuth:
+    sampler:
+      probability: 1.0
+server:
+  port: ${port:0}
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka
+logging:
+  level:
+    sql: debug
+#prueba
+
+

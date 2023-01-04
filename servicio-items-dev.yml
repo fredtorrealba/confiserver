@@ -1,0 +1,6 @@
+configuracion:
+  texto : Configurando ambiente desarrollo...----
+  autor : jhon do
+  email : ofnoef@bcl.cl
+server:
+  port: "8008"

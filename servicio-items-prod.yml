@@ -1,0 +1,6 @@
+configuracion:
+  texto : Configurando ambiente produccion
+  autor : Freddy
+  email : ofnoef@bcl.cl
+server:
+  port: "8007"

@@ -1,0 +1,13 @@
+#config.security.oauth.client.id=frontendapp
+#config.security.oauth.client.secret=12345
+#config.security.oauth.jwt.key=algun_codigo_secreto_aeiou
+
+config:
+  security:
+    oauth:
+      client:
+        id: "frontendapp"
+        secret: "12345"
+      jwt:
+        key: "algun_codigo_secreto_aeiou"
+
