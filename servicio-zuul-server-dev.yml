@@ -1,5 +1,5 @@
 server:
-  port: ${port:0}
+  port: 8090
 zuul:
   routes:
     usuarios:
@@ -24,7 +24,6 @@ eureka:
   instance:
     appname: zuul-server
     preferIpAddress: true
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   sleuth:
     sampler:
       probability: 1.0
