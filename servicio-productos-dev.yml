@@ -17,11 +17,15 @@ spring:
 server:
   port: ${PORT:0}
 eureka:
-  instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
     serviceUrl: 
       defaultZone: http://eureka-server:8761/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
+  instance:
+    appname: servicio-productos
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 logging:
   level:
     sql: info

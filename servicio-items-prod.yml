@@ -3,4 +3,65 @@ configuracion:
   autor : Freddy
   email : ofnoef@bcl.cl
 server:
-  port: "8007"
+  port: ${port:0}
+eureka:
+  client:
+    serviceUrl: 
+      defaultZone: http://eureka-server:8761/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
+  instance:
+    appname: servicio-items
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+spring:
+  application:
+    name: servicio-items
+resilience4j:
+  circuitbreaker:
+    configs:
+      defecto:
+        sliding-Window-Size: 6
+        failureRateThreshold: 50
+        waitDurationInOpenState: 20s
+        permittedNumberOfCallsInHalfOpenState: 4
+        slowCallRateThreshold: 50
+        slowCallDurationThreshold: 2s
+      default:
+        sliding-Window-Size: 6
+        failureRateThreshold: 50
+        waitDurationInOpenState: 20s
+        permittedNumberOfCallsInHalfOpenState: 4
+        slowCallRateThreshold: 50
+        slowCallDurationThreshold: 2s
+    instances:
+      items :
+        baseConfig: defecto
+      items2:
+        baseConfig: defecto
+  timelimiter:
+    configs:
+      defecto:
+        timeoutDuration: 3s
+    instances:
+      items:
+        baseConfig: defecto
+  retry:
+    configs:
+      ConfigGeneric:
+        maxAttempts: 3
+        waitDuration: 1000
+        retryExceptions:
+          - java.lang.Exception
+    instances:
+      prueba:
+        baseConfig: ConfigGeneric
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+
+
