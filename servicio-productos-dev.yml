@@ -6,20 +6,16 @@ spring:
     username: root
     password: Docker76--
     driver-class-name: com.mysql.cj.jdbc.Driver
-    hikari:
-      minimum-idle: 0
-      maximum-pool-size: 15
-      connection-timeout: 10000 #10s
-      idle-timeout: 300000 #5m
-      max-lifetime: 600000 #10m
-      initialization-fail-timeout: -1
-      validation-timeout: 1000 #1s
-    continue-on-error: true
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
       ddl-auto: update
     defer-datasource-initialization: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
   sql:
     init:
       mode: ALWAYS
@@ -41,3 +37,13 @@ logging:
   file:
     path: /app/logs
 
+#debejo de driverclass mismo nivel
+   # hikari:
+   #   minimum-idle: 0
+   #   maximum-pool-size: 15
+   #   connection-timeout: 10000 #10s
+   #   idle-timeout: 300000 #5m
+   #   max-lifetime: 600000 #10m
+   #   initialization-fail-timeout: -1
+   #   validation-timeout: 1000 #1s
+   # continue-on-error: true
