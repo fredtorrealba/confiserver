@@ -3,7 +3,7 @@ configuracion:
   autor : Freddy
   email : ofnoef@bcl.cl
 server:
-  port: ${port:0}
+  port: 80
 eureka:
   client:
     serviceUrl: 
