@@ -2,10 +2,19 @@ spring:
   application:
     name: servicio-productos
   datasource:
-    url: jdbc:mysql://MSmysql8:3306/db_springboot_cloud?serverTimezone=America/Santiago&allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://msmysql8:3306/db_springboot_cloud?serverTimezone=America/Santiago&allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: Docker76--
     driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 0
+      maximum-pool-size: 15
+      connection-timeout: 10000 #10s
+      idle-timeout: 300000 #5m
+      max-lifetime: 600000 #10m
+      initialization-fail-timeout: -1
+      validation-timeout: 1000 #1s
+    continue-on-error: true
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
@@ -31,3 +40,4 @@ logging:
     sql: info
   file:
     path: /app/logs
+
