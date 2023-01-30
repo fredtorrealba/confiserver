@@ -19,6 +19,12 @@ spring:
   sql:
     init:
       mode: ALWAYS
+  cloud:
+    kubernetes:
+      secrets:
+        enabled: true
+      discovery:
+        all-namespaces: true
 server:
   port: ${PORT:0}
 eureka:
