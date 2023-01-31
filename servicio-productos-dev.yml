@@ -25,6 +25,8 @@ spring:
         enabled: true
       discovery:
         all-namespaces: true
+  profiles:
+    active: dev
 server:
   port: 80
 eureka:
