@@ -42,18 +42,6 @@ logging:
     sql: info
   file:
     path: /app/logs
-
-#debejo de driverclass mismo nivel
-   # hikari:
-   #   minimum-idle: 0
-   #   maximum-pool-size: 15
-   #   connection-timeout: 10000 #10s
-   #   idle-timeout: 300000 #5m
-   #   max-lifetime: 600000 #10m
-   #   initialization-fail-timeout: -1
-   #   validation-timeout: 1000 #1s
-   # continue-on-error: true
-
 management:
   endpoints:
     web:
@@ -69,3 +57,14 @@ management:
       enabled: true
     readinessstate:
       enabled: true
+
+#debejo de driverclass mismo nivel
+   # hikari:
+   #   minimum-idle: 0
+   #   maximum-pool-size: 15
+   #   connection-timeout: 10000 #10s
+   #   idle-timeout: 300000 #5m
+   #   max-lifetime: 600000 #10m
+   #   initialization-fail-timeout: -1
+   #   validation-timeout: 1000 #1s
+   # continue-on-error: true
