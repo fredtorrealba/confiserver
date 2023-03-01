@@ -2,7 +2,7 @@ spring:
   application:
     name: servicio-productos
   datasource:
-    url: jdbc:mysql://msmysql8:3306/db_springboot_cloud?serverTimezone=America/Santiago&allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://localhost:3306/db_springboot_cloud?serverTimezone=America/Santiago&allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: Docker76--
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -26,7 +26,7 @@ spring:
       discovery:
         all-namespaces: true
 server:
-  port: 80
+  port: 7645
 eureka:
   client:
     serviceUrl: 
